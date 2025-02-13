@@ -15,31 +15,33 @@
             padding: 0;
         }
         h1 {
-            font-size: 2.5em;
-            margin-top: 30px;
+            font-size: 2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
         .heart {
-            font-size: 4em;
+            font-size: 3em;
             animation: heartbeat 1s infinite;
+            margin-bottom: 10px;
         }
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
         }
         .message {
-            font-size: 1.5em;
-            margin: 20px;
-            padding: 0 15px;
+            font-size: 1.2em;
+            margin: 10px;
+            padding: 0 10px;
         }
         .button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
+            margin-top: 10px;
+            padding: 8px 16px;
             background-color: #ff4d79;
             color: white;
             text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.5em;
+            border-radius: 8px;
+            font-size: 1.2em;
             cursor: pointer;
             border: none;
         }
@@ -48,24 +50,24 @@
         }
         .emoji {
             position: absolute;
-            font-size: 1.5em;
+            font-size: 1.2em;
             animation: floatUp 2s ease-out forwards, fadeOut 2s ease-out forwards;
             opacity: 1;
         }
         @keyframes floatUp {
             from { transform: translateY(0); }
-            to { transform: translateY(-100px); }
+            to { transform: translateY(-80px); }
         }
         @keyframes fadeOut {
             from { opacity: 1; }
             to { opacity: 0; }
         }
         #surprise {
-            padding: 20px;
+            padding: 10px;
         }
         #surprise img {
-            width: 80%;
-            max-width: 280px;
+            width: 70%;
+            max-width: 250px;
             border-radius: 10px;
         }
     </style>
@@ -77,14 +79,14 @@
         
         function createEmojis() {
             const emojis = ['❤️', '💖', '💘', '💕', '💓', '😍'];
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 15; i++) {
                 let emoji = document.createElement('div');
                 emoji.classList.add('emoji');
                 emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
                 emoji.style.left = Math.random() * 90 + 'vw';
                 emoji.style.top = Math.random() * 80 + 10 + 'vh';
                 emoji.style.position = 'absolute';
-                emoji.style.transform = 'scale(1)';
+                emoji.style.transform = 'scale(0.9)';
                 document.body.appendChild(emoji);
                 setTimeout(() => { emoji.remove(); }, 2000);
             }
@@ -97,8 +99,8 @@
     <p class="message">จดหมายสำหรับเบ้บคนน่ารัก💕</p>
     <button class="button" onclick="showSurprise()">กดตรงนี้เลยจร้</button>
     <div id="surprise" class="hidden">
-        <h2>💖 I love you 💖</h2>
-        <p>ขอบคุณที่เข้ามาเป็นสิ่งที่ดีให้เค้าในชีวิตนะอ้วน อยู่ด้วยกันกับเค้าไปนานๆนะ 🌹</p>
+        <h2 style="font-size: 1.5em; margin-bottom: 5px;">💖 I love you 💖</h2>
+        <p style="font-size: 1em; margin-bottom: 10px;">ขอบคุณที่เข้ามาเป็นสิ่งที่ดีให้เค้าในชีวิตนะอ้วน อยู่ด้วยกันกับเค้าไปนานๆนะ 🌹</p>
         <img src="https://i.pinimg.com/originals/dc/dd/45/dcdd45bc02f89241babe4ab61ce69f01.gif" alt="Love Image">
     </div>
 </body>
